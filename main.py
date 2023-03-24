@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 app = Flask(__name__)
 load_dotenv()
-openai.api_key = os.environ["API_KEY"]
+openai.api_key = os.getenv("API_KEY")
 @app.route('/')
 def index():
     return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
